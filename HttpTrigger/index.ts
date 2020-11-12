@@ -12,7 +12,7 @@ const httpTrigger: AzureFunction = async function (
     "https://api.chucknorris.io/jokes/random"
   );
 
-  const html = `<html><head><title>Joke</title></head><body style="text-align: center"><h1>Your joke is here</h1>${
+  const html = `<html><head><title>Joke</title></head><body style="text-align: center"><h1>Joke for you!</h1>${
     hostname && "<h2>Hostname: " + hostname + "</h2>"
   }<table style="margin-left: auto; margin-right: auto;"><tr><td><img src="${
     response.data.icon_url
@@ -25,5 +25,3 @@ const httpTrigger: AzureFunction = async function (
 };
 
 export default httpTrigger;
-
-`<html><head><title>Joke</title></head><body style="text-align: center"><h1>Your joke is here</h1><h2>Hostname: {{ .hostname }}</h2><table style="margin-left: auto; margin-right: auto;"><tr><td><img src="{{ .joke.IconUrl }}" /></td><td>{{ .joke.Value }}</td></tr></table></body></html>`;
